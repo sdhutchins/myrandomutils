@@ -9,6 +9,7 @@ My personal python utilities.
 3. `pip install .`
 
 **OR**  
+  
 `pip install git+https://github.com/sdhutchins/my-random-utils.git`
 
 
