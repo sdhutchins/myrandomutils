@@ -8,7 +8,7 @@ My personal python utilities.
 2. Change to the downloaded repository's base directory. `cd my-random-utils`
 3. `pip install .`
 
-*OR*
+**OR**  
 `pip install git+https://github.com/sdhutchins/my-random-utils.git`
 
 
