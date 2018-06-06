@@ -1,6 +1,5 @@
-[![Build Status](https://travis-ci.org/sdhutchins/random-utils.svg?branch=master)](https://travis-ci.org/sdhutchins/random-utils)  
+[![Build Status](https://travis-ci.org/sdhutchins/random-utils.svg?branch=master)](https://travis-ci.org/sdhutchins/random-utils)
 [![GitHub license](https://img.shields.io/github/license/sdhutchins/random-utils.svg)](https://github.com/sdhutchins/random-utils/blob/master/LICENSE)
- 
 
 # randomutils
 
