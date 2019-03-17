@@ -6,15 +6,20 @@ import tarfile
 from tarfile import ReadError
 from datetime import datetime
 
+
 class DeleteDir(object):
     """Delete a certain directory from all sub directories.
+
     This function uses os.walk to walk a top level directory and delete pycache
     directories in each subdirectory.
     """
-    def __init__(self, rootpath, directoryname):
-        r = rootpath
-        # Directories to exclude
-        delete = [directoryname]
+    def __init__(self, rootpath):
+        self.rootpath = rootpath
+
+    def delete_directory(self, dirname):
+        r = self.rootpath
+        # Directories to delete
+        delete = [dirname]
         for root, dirs, files in os.walk(r, topdown=True):
             for directory in dirs:
                 if directory in delete:
@@ -22,15 +27,12 @@ class DeleteDir(object):
                     try:
                         shutil.rmtree(dirpath)
                         print("The following directory was deleted: %s" % dirpath)
-                    except:
-                        raise OSError
+                    except FileExistsError as error:
+                        print("OS error: {0}".format(error))
 
-
-class DeleteCache(DeleteDir):
-    """Delete pycache directories."""
-    def __init__(self, rootpath=r'C:\Users\shutchins2',
-                 directoryname='__pycache__'):
-        super(DeleteCache, self).__init__(rootpath, directoryname)
+    def delete_cache(self):
+        """Delete pycache directories."""
+        self.delete_directory(rootpath=self.rootpath, dirname='__pycache__')
 
 
 class Extractor(object):
