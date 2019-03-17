@@ -20,19 +20,22 @@ class DeleteDir(object):
         r = self.rootpath
         # Directories to delete
         delete = [dirname]
-        for root, dirs, files in os.walk(r, topdown=True):
-            for directory in dirs:
-                if directory in delete:
-                    dirpath = os.path.join(root, directory)
-                    try:
-                        shutil.rmtree(dirpath)
-                        print("The following directory was deleted: %s" % dirpath)
-                    except FileExistsError as error:
-                        print("OS error: {0}".format(error))
+        try:
+            for root, dirs, files in os.walk(r, topdown=True):
+                for directory in dirs:
+                    if directory in delete:
+                        dirpath = os.path.join(root, directory)
+                        try:
+                            shutil.rmtree(dirpath)
+                            print("The following directory was deleted: %s" % dirpath)
+                        except FileExistsError as error:
+                            print("OS error: {0}".format(error))
+        except TypeError as error:
+            print("TypeError: No rootpath given.")
 
     def delete_cache(self):
         """Delete pycache directories."""
-        self.delete_directory(rootpath=self.rootpath, dirname='__pycache__')
+        self.delete_directory(dirname='__pycache__')
 
 
 class Extractor(object):

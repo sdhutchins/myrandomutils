@@ -9,13 +9,8 @@ def myrandomutils():
     pass
 
 
-@myrandomutils.group()
-def deletecache():
-    pass
-
-
-@deletecache.command()
+@myrandomutils.command()
 @click.option('--rootpath', '-r', default=None,
-              help="")
+              help="Choose a rootpath to be walked for deleting __pycache_ directories.")
 def deletecache(rootpath):
     DeleteDir(rootpath).delete_cache()

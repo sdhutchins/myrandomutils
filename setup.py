@@ -42,7 +42,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-                'myrandomutils=myrandomutils.cli:main'
+                'myrandomutils=myrandomutils.cli:myrandomutils'
                 ]
     },
     install_requires=[
