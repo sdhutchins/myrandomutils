@@ -23,7 +23,7 @@ setup(
     name=name,
     author='Shaurita Hutchins',
     description="A package of my favorite python utility classes or functions.",
-    version='0.1',
+    version='0.2',
     long_description=readme(),
     url='https://github.com/sdhutchins/myrandomutils',
     license='MIT',
