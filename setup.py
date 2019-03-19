@@ -23,10 +23,10 @@ setup(
     name=name,
     author='Shaurita Hutchins',
     description="A package of my favorite python utility classes or functions.",
-    version='0.1',
+    version='0.2',
     long_description=readme(),
-    url='https://github.com/sdhutchins/my-random-utils',
-    license='',
+    url='https://github.com/sdhutchins/myrandomutils',
+    license='MIT',
     keywords='science lab filemanagement',
     classifiers=[
         'Programming Language :: Python :: 3',
@@ -41,8 +41,13 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     entry_points={
-        'console_scripts': ['']
+        'console_scripts': [
+                'myrandomutils=myrandomutils.cli:myrandomutils'
+                ]
     },
+    install_requires=[
+            'click>=7.0'
+            ],
     zip_safe=False,
     test_suite='nose.collector',
     tests_require=['nose']

@@ -1,9 +1,8 @@
 """This is the test suite for file_management.py."""
 import unittest
 import os
-from shutil import rmtree
 
-from myrandomutils import DeleteCache
+from myrandomutils import DeleteDir
 
 
 class TestFileManagement(unittest.TestCase):
@@ -16,7 +15,7 @@ class TestFileManagement(unittest.TestCase):
 
     def test_file_management(self):
         """Test the DeleteCache class."""
-        DeleteCache(self.rootpath)
+        DeleteDir(self.rootpath).delete_cache()
 
 
 if __name__ == '__main__':

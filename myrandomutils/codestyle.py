@@ -7,10 +7,15 @@ class StyleFix(object):
 
     pip install autope8 to use this.
     """
-    def __init__(self, include, dirpath):
+    def __init__(self, include, dirname):
+        self.include = include
+        self.dirname = dirname
+        self.fix_style()
+        
+    def fix_style(self):
         # Directories to exclude
-        include = [include]
-        for root, dirs, files in os.walk(dirpath, topdown=True):
+        include = [self.include]
+        for root, dirs, files in os.walk(self.dirname, topdown=True):
             dirs[:] = [d for d in dirs if d in include]
             for name in files:
                 if name.endswith('.py'):
