@@ -23,7 +23,7 @@ setup(
     name=name,
     author='Shaurita Hutchins',
     description="A package of my favorite python utility classes or functions.",
-    version='0.2',
+    version='0.3',
     long_description=readme(),
     url='https://github.com/sdhutchins/myrandomutils',
     license='MIT',
@@ -33,9 +33,7 @@ setup(
         'Operating System :: POSIX :: Linux',
         'Operating System :: Unix',
         'Natural Language :: English',
-        'Programming Language :: Python :: 3 :: Only',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6'
+        'Programming Language :: Python :: 3 :: Only'
         ],
     # Packages will be automatically found if not in this list.
     packages=find_packages(),
